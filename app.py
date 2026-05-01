@@ -1,45 +1,10 @@
 from __future__ import annotations
 
-import json
-from pathlib import Path
-
 import streamlit as st
 
+from src.config import APP_TITLE, SUPPORTED_VIDEO_TYPES
+from src.mock_database import ensure_registry_file, load_owners, save_owner
 from src.video_utils import get_video_metadata, read_first_frame, save_uploaded_video
-
-
-APP_TITLE = "AI-Based Two-Wheeler Traffic Violation Detection Demo"
-REGISTRY_PATH = Path("data/mock_owner_registry.json")
-SUPPORTED_VIDEO_TYPES = ["mp4", "avi", "mov", "mkv"]
-
-
-def ensure_registry_file() -> None:
-    REGISTRY_PATH.parent.mkdir(parents=True, exist_ok=True)
-    if not REGISTRY_PATH.exists():
-        REGISTRY_PATH.write_text(json.dumps({"owners": []}, indent=2), encoding="utf-8")
-
-
-def load_owners() -> list[dict[str, str]]:
-    ensure_registry_file()
-    try:
-        data = json.loads(REGISTRY_PATH.read_text(encoding="utf-8"))
-    except json.JSONDecodeError:
-        data = {"owners": []}
-
-    owners = data.get("owners", [])
-    return owners if isinstance(owners, list) else []
-
-
-def save_owner(name: str, phone: str, email: str) -> None:
-    owners = load_owners()
-    owners.append(
-        {
-            "name": name.strip(),
-            "phone": phone.strip(),
-            "email": email.strip(),
-        }
-    )
-    REGISTRY_PATH.write_text(json.dumps({"owners": owners}, indent=2), encoding="utf-8")
 
 
 def render_header() -> None:
@@ -86,7 +51,10 @@ def render_video_upload_status(uploaded_video: object | None) -> None:
     duration_value = metadata["duration_seconds"]
 
     col1, col2, col3, col4 = st.columns(4)
-    col1.metric("Input FPS", f"{fps_value:.2f}" if isinstance(fps_value, float) else "Unavailable")
+    col1.metric(
+        "Input FPS",
+        f"{fps_value:.2f}" if isinstance(fps_value, float) else "Unavailable",
+    )
     col2.metric("Total Frames", f"{metadata['total_frames']}")
     col3.metric(
         "Duration",

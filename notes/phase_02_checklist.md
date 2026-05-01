@@ -261,10 +261,10 @@ Fill this after Phase 2 is implemented:
 
 ```text
 Completed files:
-app.py, requirements.txt, src/video_utils.py
+app.py, requirements.txt, README.md, src/config.py, src/mock_database.py, src/video_utils.py
 
 Verification performed:
-AST syntax checks passed for app.py and src/video_utils.py. OpenCV video utility functions were tested with a generated 5-frame AVI. Forbidden import scan found no YOLO, EasyOCR, PDF, email, or SMS libraries.
+AST syntax checks passed for app.py, src/config.py, src/mock_database.py, and src/video_utils.py. OpenCV video utility functions were tested with a generated 5-frame AVI. Mock owner registry helpers were tested under the workspace tmp folder. Forbidden import scan found no YOLO, EasyOCR, PDF, email, or SMS libraries.
 
 Known limitations:
 Streamlit is not installed in the current Python environment, so `streamlit run app.py` could not be verified here. OpenCV, NumPy, and Pillow are available.

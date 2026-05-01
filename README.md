@@ -24,6 +24,14 @@ Not included yet:
 
 ## Run
 
+Install dependencies:
+
+```bash
+py -m pip install -r requirements.txt
+```
+
+Start the app:
+
 ```bash
 streamlit run app.py
 ```
@@ -32,4 +40,16 @@ Run the command from the project root:
 
 ```text
 D:\codexWorkspace\Demo
+```
+
+## Model Files
+
+Model weights are intentionally not committed to Git. Place them locally under:
+
+```text
+models/
++-- two-wheeler.pt
++-- helmet-detection.pt
++-- alpr.pt
+`-- yolov8n-pose.pt
 ```

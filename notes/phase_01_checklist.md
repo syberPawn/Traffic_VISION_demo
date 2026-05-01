@@ -48,7 +48,7 @@ With:
 - [x] Add video uploader in sidebar.
 - [x] Accept `.mp4`, `.avi`, `.mov`, `.mkv`.
 - [x] Add mock owner registry form.
-- [ ] Owner form fields:
+- [x] Owner form fields:
   - [x] Owner name
   - [x] Phone number
   - [x] Email address
@@ -106,7 +106,7 @@ Fill this after Phase 1 is implemented:
 
 ```text
 Completed files:
-app.py, requirements.txt, README.md, .gitignore, .env.example, data/mock_owner_registry.json, src/__init__.py, and required Phase 1 folders.
+app.py, requirements.txt, README.md, .gitignore, .env.example, data/mock_owner_registry.json, src/__init__.py, src/config.py, src/mock_database.py, and required Phase 1 folders.
 
 Known limitations:
 Streamlit is not installed in the current Python environment. `py -m pip install -r requirements.txt` could not find the package from the configured package source, so the Streamlit runtime launch could not be verified here. The app syntax and registry helper behavior were verified.

@@ -1,0 +1,24 @@
+from __future__ import annotations
+
+from pathlib import Path
+
+
+APP_TITLE = "AI-Based Two-Wheeler Traffic Violation Detection Demo"
+
+DATA_DIR = Path("data")
+MODELS_DIR = Path("models")
+OUTPUTS_DIR = Path("outputs")
+REGISTRY_PATH = DATA_DIR / "mock_owner_registry.json"
+
+SUPPORTED_VIDEO_TYPES = ["mp4", "avi", "mov", "mkv"]
+
+TWO_WHEELER_CONFIDENCE = 0.35
+HELMET_CONFIDENCE = 0.35
+ALPR_CONFIDENCE = 0.25
+POSE_CONFIDENCE = 0.25
+VIOLATION_CONFIRMATION_FRAMES = 5
+TRACK_IOU_THRESHOLD = 0.30
+TRACK_MAX_MISSING_FRAMES = 30
+REGION_MARGIN_X_RATIO = 0.15
+REGION_UPPER_EXTENSION_RATIO = 0.80
+DEMO_FALLBACK_PLATE = "DEMO-MN01-1234"
