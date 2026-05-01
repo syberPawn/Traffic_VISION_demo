@@ -75,3 +75,19 @@ def read_first_frame(video_path: Path):
         return cv2.cvtColor(frame_bgr, cv2.COLOR_BGR2RGB)
     finally:
         capture.release()
+
+
+def iter_video_frames(video_path: Path):
+    capture = cv2.VideoCapture(str(video_path))
+    try:
+        if not capture.isOpened():
+            return
+
+        while True:
+            success, frame_bgr = capture.read()
+            if not success or frame_bgr is None:
+                break
+
+            yield cv2.cvtColor(frame_bgr, cv2.COLOR_BGR2RGB)
+    finally:
+        capture.release()

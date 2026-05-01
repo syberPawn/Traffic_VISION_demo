@@ -13,12 +13,19 @@ Current scope:
 - OpenCV video metadata reading.
 - Uploaded video preview.
 - First-frame preview.
+- Two-wheeler confidence threshold.
+- First-frame two-wheeler detection using `models/two-wheeler.pt`.
+- Annotated two-wheeler bounding-box display.
+- Full-video FPS benchmark for the two-wheeler detection stage.
+- Real-time capability status for the tested video and hardware.
 
 Not included yet:
 
-- YOLO inference.
+- Helmet detection.
+- Rider counting.
+- ALPR.
 - OCR.
-- PDF challan generation.
+- PDF generation.
 - Email notification.
 - SMS logging.
 

@@ -9,6 +9,7 @@ DATA_DIR = Path("data")
 MODELS_DIR = Path("models")
 OUTPUTS_DIR = Path("outputs")
 REGISTRY_PATH = DATA_DIR / "mock_owner_registry.json"
+TWO_WHEELER_MODEL_PATH = MODELS_DIR / "two-wheeler.pt"
 
 SUPPORTED_VIDEO_TYPES = ["mp4", "avi", "mov", "mkv"]
 
