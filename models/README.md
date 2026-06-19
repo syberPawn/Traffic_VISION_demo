@@ -17,6 +17,6 @@ Optional file:
 two-wheeler-nano.pt
 ```
 
-The `.pt` files are intentionally ignored by Git because model weights are large and may have licensing restrictions. Share them separately only if you have permission.
+The `.pt` files are intentionally ignored by Git because model weights are large. you can download the models here - https://drive.google.com/drive/folders/1hVIGVLaMPlA53bayK1qddneZHOPBK041?usp=sharing
 
 EasyOCR stores its downloaded OCR files in `models/easyocr/` on first use. That folder is also ignored by Git and does not need to be uploaded.

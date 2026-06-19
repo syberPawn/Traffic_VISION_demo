@@ -1,0 +1,8 @@
+[server]
+fileWatcherType = "none"
+enableCORS = false
+enableXsrfProtection = false
+maxUploadSize = 1024
+
+[browser]
+gatherUsageStats = false
