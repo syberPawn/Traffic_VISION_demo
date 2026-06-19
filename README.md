@@ -67,13 +67,10 @@ The system follows a modular architecture. Each major task is handled by a separ
 +-- app.py
 +-- requirements.txt
 +-- README.md
-+-- readmeV1.md
 +-- .env.example
 +-- .gitignore
 +-- .streamlit/
 |   `-- config.toml
-+-- docs/
-|   `-- GITHUB_PUBLISHING_CHECKLIST.md
 +-- models/
 |   `-- README.md
 +-- outputs/
@@ -92,7 +89,12 @@ The trained model files are provided separately through Google Drive.
 Download the trained models from:
 
 ```text
-PASTE_GOOGLE_DRIVE_MODEL_LINK_HERE
+https://drive.google.com/drive/folders/1hVIGVLaMPlA53bayK1qddneZHOPBK041?usp=sharing
+
+
+
+Note- the files maybe named differently, both yolov8n-pose.pt and two-wheeler-nano.pt is not in the drive but it is available for download easily via ultralytics, visit - https://docs.ultralytics.com/models/yolov8#supported-tasks-and-modes.
+
 ```
 
 After downloading, place the model files inside the `models/` folder.
@@ -109,7 +111,7 @@ models/yolov8n-pose.pt
 Optional smaller two-wheeler model:
 
 ```text
-models/two-wheeler-nano.pt
+models/two-wheeler-nano.pt (download it manually using ultralytics)
 ```
 
 The expected model folder structure is:
@@ -120,8 +122,8 @@ models/
 +-- two-wheeler.pt
 +-- helmet-detection.pt
 +-- alpr.pt
-+-- yolov8n-pose.pt
-`-- two-wheeler-nano.pt
++-- yolov8n-pose.pt (manually download it)
+`-- two-wheeler-nano.pt (manually download it)
 ```
 
 EasyOCR downloads its own OCR model files during first use. These files are stored locally inside:
@@ -312,4 +314,3 @@ EMAIL_FROM=
 - OCR accuracy depends on plate visibility, distance, blur, angle, and resolution.
 - Processing speed depends on hardware, video resolution, model size, and CPU/GPU availability.
 - The generated challans are for demonstration purposes only.
-
